@@ -91,3 +91,12 @@ variable "vm_ip2" {
     }
   }
 }
+
+variable "password"{
+type = map(object({
+    name = string
+  }))
+default = {
+password ="3A18Abnranger"
+}
+
