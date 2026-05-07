@@ -22,7 +22,7 @@ variable "aws_secret_key" {
 variable "password" {
 description = "password"
 type = string
-sensitive =true
+sensitive = true
 }
 
 provider "aws" {
