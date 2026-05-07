@@ -19,6 +19,12 @@ variable "aws_secret_key" {
   sensitive   = true
 }
 
+variable "password" {
+description = "password"
+type = string
+sensitive =true
+}
+
 provider "aws" {
   region     = "us-east-1"
   access_key  = var.aws_access_key
@@ -79,7 +85,7 @@ resource "aws_db_instance" "my_postgres" {
   engine_version       = "16.3"
   instance_class       = "db.t3.micro"
   username             = "campagnollo"
-  password             = "3A18Abnranger"
+  password             = password
   parameter_group_name = "default.postgres16"
   skip_final_snapshot  = true
 }
